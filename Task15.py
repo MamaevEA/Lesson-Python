@@ -6,10 +6,7 @@
 # -21 13 -8 5 -3 2 -1 1 0 1 1 2 3 5 8 13 21
 
 def fibonachi (count):
-    my_list = list()
-    my_list.append(1)
-    my_list.append(0)
-    my_list.append(1)
+    my_list = [1, 0, 1]
     if count < 0:
         return "Error"
     elif count == 1:
@@ -17,16 +14,12 @@ def fibonachi (count):
     else:
         i = 3
         while i < (count * 2):
-            f1 = my_list[i-1] + my_list[i-2]
-            my_list.append(f1)
+            my_list.append(my_list[i-1] + my_list[i-2])
             if len(my_list) % 4 == 0:
-                f2 = my_list[i] * -1
+                my_list.insert(0, my_list[i] * -1)
             else:
-                f2 = my_list[i]
-            my_list.insert(0, f2)
+                my_list.insert(0, my_list[i])
             i += 2
-        print('Список чисел Фибоначи: ')
-        print(my_list)
-
+    print(f'Список чисел Фибоначи: ', my_list)
 print('Введите чило: ')
 fibonachi(int(input()))
