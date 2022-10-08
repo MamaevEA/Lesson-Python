@@ -8,6 +8,7 @@
 
 import random
 
+
 def InputNum(inputText):
     is_Ok = False
     while not is_Ok:
@@ -21,9 +22,10 @@ def InputNum(inputText):
     else:
         print('Negative value of the number of numbers!')
 
+
 def NewList(number):
     l = []
-    i=0
+    i = 0
     print(f'Лист: ', end='')
     while i < number:
         l.append(random.randint(1, 9))

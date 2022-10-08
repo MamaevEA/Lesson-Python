@@ -1,4 +1,4 @@
-# Задайте натуральное число N. 
+# Задайте натуральное число N.
 # Напишите программу, которая составит список простых множителей числа N.
 
 # in
@@ -22,6 +22,7 @@ def prime_factors(count):
     if count > 1:
         factors.append(round(count))
     print(f'Простые множители числа N:', factors)
+
 
 print('Задайте натуральное число N:')
 prime_factors(int(input()))

@@ -136,3 +136,82 @@
 # print(result)
 # list_search(result, input())
 
+# 1. Задайте строку из набора чисел. Напишите программу,
+#    которая покажет большее и меньшее число.
+#    В качестве символа-разделителя используйте пробел.
+
+# Вариант решения 1:
+# list_1 = [int(x.strip(',.*')) for x in line.split() if x.replace("-", "").isdigit()]
+list_1 = [x.strip(',.*') for x in input().split() if x.replace("-", "").isdigit()]
+print(f'Min: {min(list_1, key=int)}')
+print(f'Max: {max(list_1, key=int)}')
+
+# Вариант решения 2: 
+list_1 = []
+for x in input().split():
+    if x.replace("-", "").isdigit():
+        list_1.append(x.strip(',.*'))
+        
+print(f'Min: {min(list_1, key=int)}')
+print(f'Max: {max(list_1, key=int)}')
+
+# Вариант решения 3:
+def check(str_list):
+    for i, num in enumerate(str_list):
+        str_list[i] = num.strip('.,;:?!')
+        if not str_list[i].replace("-", "").isdigit():
+            return []
+    return str_list
+
+
+def find_max_min(nums_str: str):
+    list_nums = nums_str.split()
+    right_list = check(list_nums)
+
+    if right_list:
+        return min(right_list, key=int), max(right_list, key=int)
+    print("The data is incorrect")
+    return []
+
+
+print(*find_max_min(input("Enter the numbers separated by a space: ")))
+
+
+# 2. Найдите корни квадратного уравнения Ax² + Bx + C = 0,
+#    с помощью дополнительных библиотек python. Запросите значения А, В, С 3 раза.
+#    Уравнения и корни запишите в файл.
+
+from math import sqrt
+
+def sqr_r(a, b, c):
+    d = b ** 2 - 4 * a * c
+    if a == 0:
+        return 'Error'
+    with open('sqr.txt', 'a', encoding='utf-8') as my_f:
+        my_f.write(f'{a}x² + {b}x + ({c}) = 0\n')
+        if d > 0:
+            my_f.write(f'{(-b + sqrt(d)) / (2 * a)}\n')
+            my_f.write(f'{(-b - sqrt(d)) / (2 * a)}\n')
+        elif d == 0:
+            my_f.write(f'{-b / (2 * a)}\n')
+        else:
+            my_f.write('Нет корней\n')
+
+
+for i in range(3):
+    sqr_r(int(input('A: ')), int(input('B: ')), int(input('C: ')))
+    print()
+
+# 3. Задайте два числа. Напишите программу, которая найдёт
+#    НОК (наименьшее общее кратное) этих двух чисел.
+
+from math import gcd
+a=int(input('a = '))
+b=int(input('b = '))
+print(a*b//gcd(a,b))
+print(gcd(a,b))
+
+# ДЗ 1 - через decimal
+
+# ДА 2 - https://autogear.ru/article/371/831/chislo-prostyih-deliteley-chisla-skolko-deliteley-imeet-prostoe-chislo/
+
