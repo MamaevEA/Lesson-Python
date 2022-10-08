@@ -10,6 +10,8 @@ from random import choices, sample
 
 def list_new(n, word):
     new_list =[]
+    if n < 1:
+        print('The data is incorrect')
     for i in range(n):
         a=sample(word,k=3)
         new_list.append(''.join(a))
