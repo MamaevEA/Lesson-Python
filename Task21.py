@@ -6,7 +6,7 @@
 # авб абв бав абв вба бав вба абв абв абв
 # авб бав вба бав вба
 
-from random import choices, sample
+from random import sample
 
 def list_new(n, word):
     new_list =[]
