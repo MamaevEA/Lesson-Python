@@ -1,26 +1,28 @@
 import easygui
-from easygui import *  #Импортируем всё.
+from easygui import *  
+import print_log
+from print_log import viev_log
 
-def menu():
+def menu(): # Создает интерфейс меню
     global type_vvod
     type_vvod = ()
-    msg = "Будем числа считать?"
+    msg = "Что делать будем?"
     title = "Меню"
-    if ccbox(msg, title, choices= ("ДА", "НЕТ")):
-        pass  
-    else:  
-        exit()
-    
-    title = 'Выбор типа числа'
-    msg = 'Какое число хотите посчитать?'
-    if boolbox(msg, title, ["Простые числа", "Комплексные числа"]):
+    choices = ["Посчитаем простое числе", "Посчитаем комплексное число", \
+        "Посмотрим логи", "Бежим отсюда!"]
+    output = choicebox(msg, title, choices)
+    if output == "Посчитаем простое числе":
         type_vvod = "Простое число"
         vvod()
-    else:
+    elif output == "Посчитаем комплексное число":
         type_vvod = "Комплексное число"
         vvod()
+    elif output == "Посмотрим логи":
+        viev_log()
+    elif output == "Бежим отсюда!":
+        exit()
     
-def vvod():
+def vvod(): # Создает интерфейс окна ввода уравнения
     global var1                 # Переменная куда будем записывать данные.
     msg = "Введите уравнение"   # Сообщение
     title = "Ввод уравнения"    # Шапочка.
@@ -29,7 +31,7 @@ def vvod():
     fieldValues = multenterbox(msg,title, fieldNames)
     var1 = fieldValues[0]       # Запись уравнения в переменную (строка)
 
-def transform_vvod():
+def transform_vvod(): # 
     global var_l
     var_l = list(var1)
     n = 0
@@ -106,8 +108,8 @@ def start_menu():
 start_menu()
 print(type_vvod)
 print(var1)
-print(var_l)
-print(var_2)
-print(var_4)
+# print(var_l)
+# print(var_2)
+# print(var_4)
 print(var_fin)
 
