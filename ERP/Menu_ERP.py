@@ -11,11 +11,9 @@ def menu(): # Создает интерфейс меню
         choices = ["Принять нового сотрудника", "Уволить сотрудника", \
         "Редактировать данные сотрудника", "Вывести отчет", "Выйти"]
         output = buttonbox(msg, title, choices)
-
         if output == "Принять нового сотрудника":
             type_vvod = 1
             vvod()
-
         elif output == "Уволить сотрудника":
             type_vvod = 2
             dell()
@@ -23,7 +21,7 @@ def menu(): # Создает интерфейс меню
             type_vvod = 3
             edit()
         elif output == "Вывести отчет":
-            type_vvod = 4
+            report()
         elif output == "Выйти!":
             exit()
     
@@ -34,7 +32,8 @@ def vvod(): # Создает интерфейс ввода нового сотр
     global subdivision          # Переменная, куда записывают подразделение сотрудника
     msg = "Введите данные сотрудника"   # Сообщение
     title = "Ввод нового сотрудника"    # Шапочка.
-    fieldNames = ["Фамилия, Имя, Отчество", "Дата рождения (дд.мм.гггг)", "Телефон", "Оклад"]  # Ввод данных
+    fieldNames = ["Фамилия, Имя, Отчество", "День рождения (дд)", "Месяц рождения (мм)", \
+        "Год рождения (гггг)", "Телефон", "Оклад"]
     fieldValues = []  
     fieldValues = multenterbox(msg,title, fieldNames)
     var1 = fieldValues      # Запись данных в переменную в виде листа
@@ -79,5 +78,38 @@ def edit():
     fieldValues = multenterbox(msg,title, fieldNames)
     edit_human = fieldValues      # Запись ID корректируемого сотрудника в переменную edit_human
 
-menu()
+def report():
+        global type_report
+        msg = "По какому признаку вы хотите сформировать отчет?"
+        title = "Отчеты"
+        choices = ["По должности", "По году рождения", \
+        "По диапазону зарплат", "А можно всех посмотреть? ;)"]
+        output = buttonbox(msg, title, choices)
+        
+        if output == "По должности":
+            fieldValues = []            # Следующее окно интерфейса выбора должности
+            title = "Выбор должности"
+            fieldNames = ["Директор", "Начальник отдела", "Менеджер по продажам", "Инженер", \
+                    "Бухгалтер", "Уборщик"] # Сюда можно добавить словарь
+            fieldValues = choicebox(msg,title, fieldNames)
+            type_report = fieldValues     # Данные о должности записаны в переменную type_report
+        
+        elif output == "По году рождения": # Следующее окно интерфейса ввода года
+            title = "Ввод года рождения"    
+            fieldNames = ["Год рождения"]  
+            fieldValues = []  
+            fieldValues = multenterbox(msg,title, fieldNames)
+            type_report = fieldValues      # Запись года рождения в переменную type_report
+        
+        elif output == "По диапазону зарплат": # Следующее окно ввода диапазона зарплат
+            title = "Ввод диапазона зарплат"    
+            fieldNames = ["Минимум", "Максимум"]  
+            fieldValues = []  
+            fieldValues = multenterbox(msg,title, fieldNames)
+            type_report = fieldValues      # Запись диапазона зарплат в переменную type_report
+        elif output == "А можно всех посмотреть? ;)":
+            type_report = "All"     
+            # При выводе всех сотрудников, в переменную type_report записывается строка "All".
 
+menu()
+print(var1)
