@@ -2,4 +2,4 @@
 
 # Архитектура информационной системы управления базой данных сотрудников предприятия:
 
-! [Архитектура](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/2022-11-24 10.08.45.jpg)
+! [Архитектура](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Arh.jpg)
