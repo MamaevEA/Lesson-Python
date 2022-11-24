@@ -21,16 +21,17 @@
 
 Интерфейс меню состоит из следующих блоков:
 
-[Главное меню "menu()"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Menu.png)
+![Главное меню "menu()"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Menu.png)
 
-[Окно ввода ФИО, даты рождения, телефона и оклада нового сотрудника "vvod()"](https://github.com/MamaevEA/Lesson-Python/blob/e37019e51d367967d8422f81b7e0c22c50c631ac/ERP/Arh.jpg)
 
-[Окно выбора пола, вводимого сотрудника "Sex"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Sex.png)
+![Окно ввода ФИО, даты рождения, телефона и оклада нового сотрудника "vvod()"](https://github.com/MamaevEA/Lesson-Python/blob/e37019e51d367967d8422f81b7e0c22c50c631ac/ERP/Arh.jpg)
 
-[Окно выбора должности, вводимого сотрудника "Job_title"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Job_title.png)
+![Окно выбора пола, вводимого сотрудника "Sex"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Sex.png)
 
-[Окно выбора подразделения, вводимого сотрудника "Subdvision"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Subdivision.png)
+![Окно выбора должности, вводимого сотрудника "Job_title"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Job_title.png)
 
-[Окно ввода табельного номера, удаляемого сотрудника "Dell"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Dell.png)
+![Окно выбора подразделения, вводимого сотрудника "Subdvision"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Subdivision.png)
 
-[Окно ввода табельного номера, редактируемого сотрудника "Edit"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Edit.png)
+![Окно ввода табельного номера, удаляемого сотрудника "Dell"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Dell.png)
+
+![Окно ввода табельного номера, редактируемого сотрудника "Edit"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Edit.png)
