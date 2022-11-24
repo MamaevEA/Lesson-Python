@@ -1,5 +1,8 @@
 import easygui
 from easygui import *  
+import json
+import random
+
 
 def menu(): # Создает интерфейс меню
     global type_vvod        # Переменная, куда записывается выбор пользователя
@@ -14,6 +17,7 @@ def menu(): # Создает интерфейс меню
         if output == "Принять нового сотрудника":
             type_vvod = 1
             vvod()
+            new_people()
         elif output == "Уволить сотрудника":
             type_vvod = 2
             dell()
@@ -69,6 +73,7 @@ def dell():
     fieldValues = multenterbox(msg,title, fieldNames)
     dell_human = fieldValues      # Запись ID удаляемого сотрудника в переменную dell_human
 
+
 def edit():             
     global edit_human    # Переменная, куда записывается ID сотрудника, которого надо отредактировать
     msg = "Введите табельный номер сотрудника, данные которого хотите откорректировать"   # Сообщение
@@ -110,6 +115,31 @@ def report():
         elif output == "А можно всех посмотреть? ;)":
             type_report = "All"     
             # При выводе всех сотрудников, в переменную type_report записывается строка "All".
+
+def uniqueid():
+    seed = random.getrandbits(32)
+    while True:
+       yield seed
+       seed += 1
+
+def new_people():
+        unique_sequence = uniqueid()
+        ID = next(unique_sequence)
+        dob = [int(var1[1]), int(var1[2]), int(var1[3])]
+        data = {}
+        data[ID] = []
+        data[ID].append({
+            'Name': str(var1[0]),
+            'Sex': str(sex),
+            'Day of Birth': dob,
+            'Phone': str(var1[4]),
+            'Salary': str(var1[5]),
+            'Job_title': str(job_title),
+            'Subdivision': str(subdivision) 
+        })
+
+        with open('ERP/data.txt', 'a') as outfile:
+            json.dump(data, outfile, indent=2, ensure_ascii=False)
 
 menu()
 print(var1)
