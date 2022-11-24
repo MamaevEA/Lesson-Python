@@ -23,4 +23,14 @@
 
 [Главное меню "menu()"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Menu.png)
 
-[Экрана ввода ФИО, даты рождения, телефона и оклада нового сотрудника "vvod()"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Vvod.png)
+[Окно ввода ФИО, даты рождения, телефона и оклада нового сотрудника "vvod()"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Vvod.png)
+
+[Окно выбора пола, вводимого сотрудника "Sex"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Sex.png)
+
+[Окно выбора должности, вводимого сотрудника "Job_title"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Job_title.png)
+
+[Окно выбора подразделения, вводимого сотрудника "Subdvision"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Subdivision.png)
+
+[Окно ввода табельного номера, удаляемого сотрудника "Dell"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Dell.png)
+
+[Окно ввода табельного номера, редактируемого сотрудника "Edit"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Edit.png)
