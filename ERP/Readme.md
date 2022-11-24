@@ -8,7 +8,7 @@
 Плюсами будет наличие ГУИ и/или наличие настоящей БД (SQLite3 / PostgreSQL)
 
 ## Архитектура информационной системы управления базой данных сотрудников предприятия:
-### [Архитектура](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Arh.jpg)
+### ![Архитектура](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Arh.jpg)
 
 ## Состав команды:
 1. Евгений Буслейко. Team-lead. Задачи: модуль - База данных, общее руководство.
@@ -21,10 +21,9 @@
 
 Интерфейс меню состоит из следующих блоков:
 
-![Главное меню "menu()"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Menu.png)
+![Главное меню "menu()"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Menu.png "Главное меню 'menu()'")
 
-
-![Окно ввода ФИО, даты рождения, телефона и оклада нового сотрудника "vvod()"](https://github.com/MamaevEA/Lesson-Python/blob/e37019e51d367967d8422f81b7e0c22c50c631ac/ERP/Arh.jpg)
+![Окно ввода ФИО, даты рождения, телефона и оклада нового сотрудника "vvod()"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Vvod.png)
 
 ![Окно выбора пола, вводимого сотрудника "Sex"](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Sex.png)
 
