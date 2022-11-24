@@ -149,24 +149,28 @@ def search_menu():
         choise1 = (buttonbox('', 'Выберите действие', choises1)) # Command received from User
         if choise1 == 'Вывод на экран всех сотрудников':
             all_list = print_names(list1, data)
-            widget1 = Tk()
-            widget1.title('Список всех сотрудников')
-            widget1.geometry('600x200')
-            txt = scrolledtext.ScrolledText(widget1, width=90, height=20)
-            txt.grid(column=1, row=1)
-            table1 = tabulate(all_list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
-            txt.insert(INSERT, table1)
-            mainloop()
+            def show_widget(list):
+                widget1 = Tk()
+                widget1.title('Список всех сотрудников')
+                widget1.geometry('600x200')
+                txt = scrolledtext.ScrolledText(widget1, width=90, height=20)
+                txt.grid(column=1, row=1)
+                table1 = tabulate(list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
+                txt.insert(INSERT, table1)
+                mainloop()
+            show_widget(all_list)
         elif choise1 == 'Телефонный справочник':
             ph_list = phones_list(list1, data)
-            widget1 = Tk()
-            widget1.title('Телефонный справочник')
-            widget1.geometry('600x200')
-            txt = scrolledtext.ScrolledText(widget1, width=90, height=20)
-            txt.grid(column=1, row=1)
-            table1 = tabulate(ph_list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
-            txt.insert(INSERT, table1)
-            mainloop()
+            def show_widget(list):
+                widget1 = Tk()
+                widget1.title('Телефонный справочник')
+                widget1.geometry('600x200')
+                txt = scrolledtext.ScrolledText(widget1, width=90, height=20)
+                txt.grid(column=1, row=1)
+                table1 = tabulate(list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
+                txt.insert(INSERT, table1)
+                mainloop()
+            show_widget(ph_list)
         elif choise1 == 'Параметры поиска':
             choise2 = '' # Type of research
             while choise2 != 'Выйти':
@@ -181,27 +185,22 @@ def search_menu():
                     position = input_position()
                     position_list = prof_search(list1, data, position)
                     if len(position_list) != 0:
-                        widget1 = Tk()
-                        widget1.title(f'Сотрудники с должностью "{position}"')
-                        widget1.geometry('393x200')
-                        txt = scrolledtext.ScrolledText(widget1, width=90, height=20)
-                        txt.grid(column=1, row=1)
-                        table1 = tabulate(position_list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
-                        txt.insert(INSERT, table1)
-                        mainloop()
+                        def show_widget(list):
+                            widget1 = Tk()
+                            widget1.title(f'Сотрудники с должностью "{position}"')
+                            widget1.geometry('463x200')
+                            txt = scrolledtext.ScrolledText(widget1, width=90, height=20)
+                            txt.grid(column=1, row=1)
+                            table1 = tabulate(list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
+                            txt.insert(INSERT, table1)
+                            mainloop()
+                        show_widget(position_list)
                         while True: # If User wants to check another position
                                 if ccbox('Хотите продолжить посик?', 'Выберите следующий шаг'):
                                     position = input_position()
                                     position_list = prof_search(list1, data, position)
                                     if len(position_list) != 0:
-                                        widget1 = Tk()
-                                        widget1.title(f'Сотрудники с должностью "{position}"')
-                                        widget1.geometry('393x200')
-                                        txt = scrolledtext.ScrolledText(widget1, width=90, height=20)
-                                        txt.grid(column=1, row=1)
-                                        table1 = tabulate(position_list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
-                                        txt.insert(INSERT, table1)
-                                        mainloop()
+                                        show_widget(position_list)
                                     else:
                                         msgbox(f'По запросу "{position}" ничего не найдено. Измените параметры поиска')
                                 else:
@@ -213,14 +212,7 @@ def search_menu():
                                     position = input_position()
                                     position_list = prof_search(list1, data, position)
                                     if len(position_list) != 0:
-                                        widget1 = Tk()
-                                        widget1.title(f'Сотрудники с должностью "{position}"')
-                                        widget1.geometry('393x200')
-                                        txt = scrolledtext.ScrolledText(widget1, width=90, height=20)
-                                        txt.grid(column=1, row=1)
-                                        table1 = tabulate(position_list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
-                                        txt.insert(INSERT, table1)
-                                        mainloop()
+                                        show_widget(position_list)
                                     else:
                                         msgbox(f'По запросу "{position}" ничего не найдено. Измените параметры поиска.')
                                 else:
@@ -234,27 +226,22 @@ def search_menu():
                     year = input_year()
                     year_list = birth_year(list1, data, year)
                     if len(year_list) != 0:
-                        widget1 = Tk()
-                        widget1.title(f'Сотрудники, родившиеся в {year} году')
-                        widget1.geometry('563x200')
-                        txt = scrolledtext.ScrolledText(widget1, width=90, height=20)
-                        txt.grid(column=1, row=1)
-                        table1 = tabulate(year_list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
-                        txt.insert(INSERT, table1)
-                        mainloop()
+                        def show_widget(list):
+                            widget1 = Tk()
+                            widget1.title(f'Сотрудники, родившиеся в {year} году')
+                            widget1.geometry('563x200')
+                            txt = scrolledtext.ScrolledText(widget1, width=90, height=20)
+                            txt.grid(column=1, row=1)
+                            table1 = tabulate(list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
+                            txt.insert(INSERT, table1)
+                            mainloop()
+                        show_widget(year_list)
                         while True: # If User wants to check another year
                                 if ccbox('Хотите продолжить поиск?', 'Выберите следующий шаг'):
                                     year = input_year()
                                     year_list = birth_year(list1, data, year)
                                     if len(year_list) != 0:
-                                        widget1 = Tk()
-                                        widget1.title(f'Сотрудники, родившиеся в {year} году')
-                                        widget1.geometry('563x200')
-                                        txt = scrolledtext.ScrolledText(widget1, width=90, height=20)
-                                        txt.grid(column=1, row=1)
-                                        table1 = tabulate(year_list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
-                                        txt.insert(INSERT, table1)
-                                        mainloop()
+                                        show_widget(year_list)
                                     else:
                                         msgbox(f'Сотрудники {year} года рождения не найдены. Измените параметры поиска.')
                                 else:
@@ -266,14 +253,7 @@ def search_menu():
                                     year = input_year()
                                     year_list = birth_year(list1, data, year)
                                     if len(year_list) != 0:
-                                        widget1 = Tk()
-                                        widget1.title(f'Сотрудники, родившиеся в {year} году')
-                                        widget1.geometry('563x200')
-                                        txt = scrolledtext.ScrolledText(widget1, width=90, height=20)
-                                        txt.grid(column=1, row=1)
-                                        table1 = tabulate(year_list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
-                                        txt.insert(INSERT, table1)
-                                        mainloop()
+                                        show_widget(year_list)
                                     else:
                                         msgbox(f'Сотрудники {year} года рождения не найдены. Измените параметры поиска.')
                                 else:
@@ -292,14 +272,16 @@ def search_menu():
                     max = var_max
                     salary_list = salary_range(list1, data, min, max)
                     if len(salary_list) != 0:
-                        widget1 = Tk()
-                        widget1.title(f'ЗП в диапазоне от {min} до {max}')
-                        widget1.geometry('600x200')
-                        txt = scrolledtext.ScrolledText(widget1, width=90, height=20)
-                        txt.grid(column=1, row=1)
-                        table1 = tabulate(salary_list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
-                        txt.insert(INSERT, table1)
-                        mainloop()
+                        def show_widget(list):
+                            widget1 = Tk()
+                            widget1.title(f'ЗП в диапазоне от {min} до {max}')
+                            widget1.geometry('600x200')
+                            txt = scrolledtext.ScrolledText(widget1, width=90, height=20)
+                            txt.grid(column=1, row=1)
+                            table1 = tabulate(list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
+                            txt.insert(INSERT, table1)
+                            mainloop()
+                        show_widget(salary_list)
                         while True: # If User wants to check another range
                             if ccbox('Хотите продолжить поиск?', 'Выберите следующий шаг'):
                                 input_salary()
@@ -307,14 +289,7 @@ def search_menu():
                                 max = var_max
                                 salary_list = salary_range(list1, data, min, max)
                                 if len(salary_list) != 0:
-                                    widget1 = Tk()
-                                    widget1.title(f'ЗП в диапазоне от {min} до {max}')
-                                    widget1.geometry('600x200')
-                                    txt = scrolledtext.ScrolledText(widget1, width=90, height=20)
-                                    txt.grid(column=1, row=1)
-                                    table1 = tabulate(salary_list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
-                                    txt.insert(INSERT, table1)
-                                    mainloop()
+                                    show_widget(salary_list)
                                 else:
                                     msgbox(f'В диапазоне от {min} до {max} рублей ничего не найдено. Измените параметры поиска.')
                             else:
@@ -328,14 +303,7 @@ def search_menu():
                                 max = var_max
                                 salary_list = salary_range(list1, data, min, max)
                                 if len(salary_list) != 0:
-                                    widget1 = Tk()
-                                    widget1.title(f'ЗП в диапазоне от {min} до {max}')
-                                    widget1.geometry('600x200')
-                                    txt = scrolledtext.ScrolledText(widget1, width=90, height=20)
-                                    txt.grid(column=1, row=1)
-                                    table1 = tabulate(salary_list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
-                                    txt.insert(INSERT, table1)
-                                    mainloop()
+                                    show_widget(salary_list)
                                 else:
                                     msgbox(f'В диапазоне от {min} до {max} рублей ничего не найдено. Измените параметры поиска.')
                             else:
