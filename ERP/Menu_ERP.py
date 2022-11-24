@@ -132,8 +132,8 @@ def new_people():
             'Name': str(var1[0]),
             'Sex': str(sex),
             'Day of Birth': dob,
-            'Phone': str(var1[4]),
-            'Salary': str(var1[5]),
+            'Phone': var1[4],
+            'Salary': var1[5],
             'Job_title': str(job_title),
             'Subdivision': str(subdivision) 
         })
