@@ -70,9 +70,8 @@ def dell():
     msg = "Введите табельный номер сотрудника, которого хотите удалить из базы данных"   # Сообщение
     title = "Удаление сотрудника"    # Шапочка.
     fieldNames = ["Табельный номер"]  # Ввод ID
-    fieldValues = []  
     fieldValues = multenterbox(msg,title, fieldNames)
-    dell_human = fieldValues      # Запись ID удаляемого сотрудника в переменную dell_human
+    dell_human = fieldValues[0]      # Запись ID удаляемого сотрудника в переменную dell_human
 
 
 def edit():             
@@ -128,9 +127,9 @@ def new_people():
         ID = next(unique_sequence)
         dob = [int(var1[1]), int(var1[2]), int(var1[3])]
         with open('ERP/data.json') as json_file:
+            data = {}
             data = json.load(json_file)
-        data[ID] = []
-        data[ID].append({
+        data[ID] = {
             'Name': var1[0],
             'Sex': sex,
             'Day of Birth': dob,
@@ -138,7 +137,7 @@ def new_people():
             'Salary': var1[5],
             'Job_title': job_title,
             'Subdivision': subdivision
-        })
+        }
 
         with open('ERP/data.json', 'w') as outfile:
             json.dump(data, outfile, indent=2, ensure_ascii=False)
@@ -150,8 +149,7 @@ def del_people():
         data.pop(dell_human, None)
     with open('ERP/data.json', 'w') as json_file:
         json.dump(data, json_file, indent=2, ensure_ascii=False)
+        
 
-    
 menu()
-print(var1)
-print(dell_human)
+
