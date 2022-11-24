@@ -21,6 +21,7 @@ def menu(): # Создает интерфейс меню
         elif output == "Уволить сотрудника":
             type_vvod = 2
             dell()
+            del_people()
         elif output == "Редактировать данные сотрудника":
             type_vvod = 3
             edit()
@@ -126,20 +127,31 @@ def new_people():
         unique_sequence = uniqueid()
         ID = next(unique_sequence)
         dob = [int(var1[1]), int(var1[2]), int(var1[3])]
-        data = {}
+        with open('ERP/data.json') as json_file:
+            data = json.load(json_file)
         data[ID] = []
         data[ID].append({
-            'Name': str(var1[0]),
-            'Sex': str(sex),
+            'Name': var1[0],
+            'Sex': sex,
             'Day of Birth': dob,
             'Phone': var1[4],
             'Salary': var1[5],
-            'Job_title': str(job_title),
-            'Subdivision': str(subdivision) 
+            'Job_title': job_title,
+            'Subdivision': subdivision
         })
 
-        with open('ERP/data.txt', 'a') as outfile:
+        with open('ERP/data.json', 'w') as outfile:
             json.dump(data, outfile, indent=2, ensure_ascii=False)
 
+def del_people():
+    with open('ERP/data.json') as json_file:
+        data = {}
+        data = json.load(json_file)
+        data.pop(dell_human, None)
+    with open('ERP/data.json', 'w') as json_file:
+        json.dump(data, json_file, indent=2, ensure_ascii=False)
+
+    
 menu()
 print(var1)
+print(dell_human)
