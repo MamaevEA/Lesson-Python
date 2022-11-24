@@ -182,10 +182,7 @@ def search_menu():
                         input_values1 = enterbox('Введите название должности:')
                         var_pos = str(input_values1)
                         return var_pos
-                    position = input_position()
-                    position_list = prof_search(list1, data, position)
-                    if len(position_list) != 0:
-                        def show_widget(list):
+                    def show_widget(list):
                             widget1 = Tk()
                             widget1.title(f'Сотрудники с должностью "{position}"')
                             widget1.geometry('463x200')
@@ -194,6 +191,9 @@ def search_menu():
                             table1 = tabulate(list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
                             txt.insert(INSERT, table1)
                             mainloop()
+                    position = input_position()
+                    position_list = prof_search(list1, data, position)
+                    if len(position_list) != 0:
                         show_widget(position_list)
                         while True: # If User wants to check another position
                                 if ccbox('Хотите продолжить посик?', 'Выберите следующий шаг'):
@@ -223,10 +223,7 @@ def search_menu():
                         input_values1 = enterbox('Введите год рождения:')
                         var_year = int(input_values1)
                         return var_year
-                    year = input_year()
-                    year_list = birth_year(list1, data, year)
-                    if len(year_list) != 0:
-                        def show_widget(list):
+                    def show_widget(list):
                             widget1 = Tk()
                             widget1.title(f'Сотрудники, родившиеся в {year} году')
                             widget1.geometry('563x200')
@@ -235,6 +232,9 @@ def search_menu():
                             table1 = tabulate(list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
                             txt.insert(INSERT, table1)
                             mainloop()
+                    year = input_year()
+                    year_list = birth_year(list1, data, year)
+                    if len(year_list) != 0:
                         show_widget(year_list)
                         while True: # If User wants to check another year
                                 if ccbox('Хотите продолжить поиск?', 'Выберите следующий шаг'):
@@ -267,12 +267,7 @@ def search_menu():
                         input_values = multenterbox('Введите диапазон ЗП', 'Поиск по диапазону ЗП', range_list)
                         var_min = int(input_values[0])
                         var_max = int(input_values[1])
-                    input_salary()
-                    min = var_min
-                    max = var_max
-                    salary_list = salary_range(list1, data, min, max)
-                    if len(salary_list) != 0:
-                        def show_widget(list):
+                    def show_widget(list):
                             widget1 = Tk()
                             widget1.title(f'ЗП в диапазоне от {min} до {max}')
                             widget1.geometry('600x200')
@@ -281,6 +276,11 @@ def search_menu():
                             table1 = tabulate(list, headers='firstrow', tablefmt='fancy_grid', stralign='center')
                             txt.insert(INSERT, table1)
                             mainloop()
+                    input_salary()
+                    min = var_min
+                    max = var_max
+                    salary_list = salary_range(list1, data, min, max)
+                    if len(salary_list) != 0:
                         show_widget(salary_list)
                         while True: # If User wants to check another range
                             if ccbox('Хотите продолжить поиск?', 'Выберите следующий шаг'):
