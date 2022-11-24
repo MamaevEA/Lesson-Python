@@ -24,7 +24,7 @@ def menu(): # Создает интерфейс меню
             edit()
         elif output == "Вывести отчет":
             type_vvod = 4
-        elif output == "Бежим отсюда!":
+        elif output == "Выйти!":
             exit()
     
 def vvod(): # Создает интерфейс ввода нового сотрудника
