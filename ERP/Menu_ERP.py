@@ -25,6 +25,7 @@ def menu(): # Создает интерфейс меню
         elif output == "Редактировать данные сотрудника":
             type_vvod = 3
             edit()
+            edit_people()
         elif output == "Вывести отчет":
             report()
         elif output == "Выйти!":
@@ -79,9 +80,8 @@ def edit():
     msg = "Введите табельный номер сотрудника, данные которого хотите откорректировать"   # Сообщение
     title = "Редактирование данных сотрудника"    # Шапочка.
     fieldNames = ["Табельный номер"]  # Ввод ID
-    fieldValues = []  
     fieldValues = multenterbox(msg,title, fieldNames)
-    edit_human = fieldValues      # Запись ID корректируемого сотрудника в переменную edit_human
+    edit_human = fieldValues[0]      # Запись ID корректируемого сотрудника в переменную edit_human
 
 def report():
         global type_report
@@ -149,7 +149,27 @@ def del_people():
         data.pop(dell_human, None)
     with open('ERP/data.json', 'w') as json_file:
         json.dump(data, json_file, indent=2, ensure_ascii=False)
+
+def edit_people():
+     with open('ERP/data.json') as json_file:
+        data = {}
+        data = json.load(json_file)
         
+        
+        
+        # msg = data[edit_human]   # Сообщение
+        # title = "Какие данные будете редактировать?"    # Шапочка. 
+        # fieldNames = ["Фамилия, Имя, Отчество", "День рождения (дд)", "Месяц рождения (мм)", \
+        # "Год рождения (гггг)", "Телефон", "Оклад", "Пол", "Должность", "Подразделение"]
+        # fieldValues = choicebox(msg,title, fieldNames)
+        # edit_but = fieldValues      # Запись данных в переменную в виде листа 
+        # if edit_but == "Фамилия, Имя, Отчество":
+        #     msg = "Введите новые ФИО"   # Сообщение
+        #     title = "Редактирование данных сотрудника"    # Шапочка.
+        #     fieldNames = ["Фамилия, Имя, Отчество"]  # Ввод ID
+        #     fieldValues = multenterbox(msg,title, fieldNames)
+        #     edit_but_f = fieldValues[0]
+        #     data[edit_human: ]
 
 menu()
 
