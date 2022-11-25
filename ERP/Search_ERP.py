@@ -310,5 +310,3 @@ def search_menu():
                                 break
         elif choise1 == 'Выйти':
             exit()
-
-search_menu()

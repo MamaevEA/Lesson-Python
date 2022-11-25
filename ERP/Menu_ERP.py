@@ -153,25 +153,82 @@ def del_people():
         json.dump(data, json_file, indent=2, ensure_ascii=False)
 
 def edit_people():
-     with open('ERP/data.json') as json_file:
+    with open('ERP/data.json') as json_file:
         data = {}
         data = json.load(json_file)
-        
-        
-        
-        # msg = data[edit_human]   # Сообщение
-        # title = "Какие данные будете редактировать?"    # Шапочка. 
-        # fieldNames = ["Фамилия, Имя, Отчество", "День рождения (дд)", "Месяц рождения (мм)", \
-        # "Год рождения (гггг)", "Телефон", "Оклад", "Пол", "Должность", "Подразделение"]
-        # fieldValues = choicebox(msg,title, fieldNames)
-        # edit_but = fieldValues      # Запись данных в переменную в виде листа 
-        # if edit_but == "Фамилия, Имя, Отчество":
-        #     msg = "Введите новые ФИО"   # Сообщение
-        #     title = "Редактирование данных сотрудника"    # Шапочка.
-        #     fieldNames = ["Фамилия, Имя, Отчество"]  # Ввод ID
-        #     fieldValues = multenterbox(msg,title, fieldNames)
-        #     edit_but_f = fieldValues[0]
-        #     data[edit_human: ]
+        msg = data[edit_human]   # Сообщение
+        title = "Какие данные будете редактировать?"    # Шапочка. 
+        fieldNames = ["Фамилия, Имя, Отчество", "День рождения (дд)", "Месяц рождения (мм)", \
+        "Год рождения (гггг)", "Телефон", "Оклад", "Пол", "Должность", "Подразделение"]
+        fieldValues = choicebox(msg,title, fieldNames)
+        edit_but = fieldValues      # Запись данных в переменную в виде листа 
+        if edit_but == "Фамилия, Имя, Отчество":
+            msg = "Введите новые ФИО"   # Сообщение
+            title = "Редактирование данных сотрудника"    # Шапочка.
+            fieldNames = ["Фамилия, Имя, Отчество"]  # Ввод 
+            fieldValues = multenterbox(msg,title, fieldNames)
+            edit_but_f = fieldValues[0]
+            data[edit_human]["Name"] = edit_but_f
+        elif edit_but == "День рождения (дд)":
+            msg = "Введите новую дату рождения"   # Сообщение
+            title = "Редактирование данных сотрудника"    # Шапочка.
+            fieldNames = ["День рождения (дд)"]  # Ввод 
+            fieldValues = multenterbox(msg,title, fieldNames)
+            edit_but_f = fieldValues[0]
+            data[edit_human]["Day of Birth"][0]= int(edit_but_f) 
+        elif edit_but == "Месяц рождения (мм)":
+            msg = "Введите новую дату рождения"   # Сообщение
+            title = "Редактирование данных сотрудника"    # Шапочка.
+            fieldNames = ["Месяц рождения (мм)"]  # Ввод 
+            fieldValues = multenterbox(msg,title, fieldNames)
+            edit_but_f = fieldValues[0]
+            data[edit_human]["Day of Birth"][1]= int(edit_but_f) 
+        elif edit_but == "Год рождения (гггг)":
+            msg = "Введите новую дату рождения"   # Сообщение
+            title = "Редактирование данных сотрудника"    # Шапочка.
+            fieldNames = ["Год рождения (гггг)"]  # Ввод
+            fieldValues = multenterbox(msg,title, fieldNames)
+            edit_but_f = fieldValues[0]
+            data[edit_human]["Day of Birth"][2]= int(edit_but_f) 
+        elif edit_but == "Телефон":
+            msg = "Введите новый телефон"   # Сообщение
+            title = "Редактирование данных сотрудника"    # Шапочка.
+            fieldNames = ["Телефон"]  # Ввод
+            fieldValues = multenterbox(msg,title, fieldNames)
+            edit_but_f = fieldValues[0]
+            data[edit_human]["Phone"] = edit_but_f
+        elif edit_but == "Оклад":
+            msg = "Введите новый оклад"   # Сообщение
+            title = "Редактирование данных сотрудника"    # Шапочка.
+            fieldNames = ["Оклад"]  # Ввод
+            fieldValues = multenterbox(msg,title, fieldNames)
+            edit_but_f = fieldValues[0]
+            data[edit_human]["Salary"] = edit_but_f
+        elif edit_but == "Пол":
+            msg = "Введите новый пол"   # Сообщение
+            title = "Редактирование данных сотрудника"    # Шапочка.
+            fieldNames = ["Мужской", "Женский"] # Сюда можно добавить словарь
+            fieldValues = buttonbox(msg,title, fieldNames)
+            edit_but_f = fieldValues
+        elif edit_but == "Должность":
+            msg = "Введите новую должность"   # Сообщение
+            title = "Редактирование данных сотрудника"    # Шапочка.
+            fieldNames = ["Директор", "Начальник отдела", "Менеджер по продажам", "Инженер", \
+                "Бухгалтер", "Уборщик"] # Сюда можно добавить словарь
+            fieldValues = choicebox(msg,title, fieldNames)
+            edit_but_f = fieldValues
+            data[edit_human]["Job_title"] = edit_but_f
+        elif edit_but == "Подразделение":
+            msg = "Введите новое подразделение"   # Сообщение
+            title = "Редактирование данных сотрудника"    # Шапочка.
+            fieldNames = ["Администрация", "Отдел продаж", "ИТ-отдел", "АХО"] 
+            # Сюда можно добавить словарь
+            fieldValues = choicebox(msg,title, fieldNames)
+            edit_but_f = fieldValues
+            data[edit_human]["Subdivision"] = edit_but_f 
+    with open('ERP/data.json', 'w') as json_file:
+        json.dump(data, json_file, indent=2, ensure_ascii=False)
 
+    
 menu()
 
