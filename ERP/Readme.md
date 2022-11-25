@@ -44,3 +44,58 @@
 ---
 ![Окно ввода нового имени](https://github.com/MamaevEA/Lesson-Python/blob/b979c8df7bdfc3fd5548c666d7b9737c932fb4c5/ERP/Edit_Name.png)
 Окно ввода нового имени
+---
+![Окно ввода нового дня рождения](https://github.com/MamaevEA/Lesson-Python/blob/85f7134e970ff0f91be43f3dfe64d9a5e9017900/ERP/Edit_Day.png)
+Окно ввода нового дня рождения
+---
+![Окно ввода нового месяца рождения](https://github.com/MamaevEA/Lesson-Python/blob/85f7134e970ff0f91be43f3dfe64d9a5e9017900/ERP/Edit_Month.png)
+Окно ввода нового месяца рождения
+---
+![Окно ввода нового года рождения](https://github.com/MamaevEA/Lesson-Python/blob/85f7134e970ff0f91be43f3dfe64d9a5e9017900/ERP/Edit_Year.png)
+Окно ввода нового года рождения
+---
+![Окно ввода нового пола](https://github.com/MamaevEA/Lesson-Python/blob/85f7134e970ff0f91be43f3dfe64d9a5e9017900/ERP/Edit_Sex.png)
+Окно ввода нового пола
+---
+![Окно ввода новой должности](https://github.com/MamaevEA/Lesson-Python/blob/85f7134e970ff0f91be43f3dfe64d9a5e9017900/ERP/Edit_Job_title.png)
+Окно ввода новой должности
+---
+![Окно ввода нового подразделения](https://github.com/MamaevEA/Lesson-Python/blob/85f7134e970ff0f91be43f3dfe64d9a5e9017900/ERP/Edit_Subdivision.png)
+Окно ввода нового подразделения
+---
+![Окно ввода нового телефона](https://github.com/MamaevEA/Lesson-Python/blob/85f7134e970ff0f91be43f3dfe64d9a5e9017900/ERP/Edit_Phone.png)
+Окно ввода нового телефона
+---
+![Окно ввода нового оклада](https://github.com/MamaevEA/Lesson-Python/blob/85f7134e970ff0f91be43f3dfe64d9a5e9017900/ERP/Edit_Salary.png)
+Окно ввода нового оклада
+---
+![Окно выбора вида отчета](https://github.com/MamaevEA/Lesson-Python/blob/85f7134e970ff0f91be43f3dfe64d9a5e9017900/ERP/Search.png)
+Окно выбора типа отчета
+---
+![Окно вывода всех сотрудников](https://github.com/MamaevEA/Lesson-Python/blob/85f7134e970ff0f91be43f3dfe64d9a5e9017900/ERP/Search_all.png)
+Окно вывода всех сотрудников
+---
+![Окно вывода телефонного справочника](https://github.com/MamaevEA/Lesson-Python/blob/85f7134e970ff0f91be43f3dfe64d9a5e9017900/ERP/Searche_Phone.png)
+Окно вывода телефонного справочника
+---
+![Окно выбора параметра отчета](https://github.com/MamaevEA/Lesson-Python/blob/85f7134e970ff0f91be43f3dfe64d9a5e9017900/ERP/Searche_Change.png)
+Окно выбора параметра отчета
+---
+![Окно ввода должности для поиска](https://github.com/MamaevEA/Lesson-Python/blob/85f7134e970ff0f91be43f3dfe64d9a5e9017900/ERP/Search_Job_title.png)
+Окно ввода должности для поиска
+---
+![Окно вывода результатов поиска по должности](https://github.com/MamaevEA/Lesson-Python/blob/85f7134e970ff0f91be43f3dfe64d9a5e9017900/ERP/Rez_Job_title.png)
+Окно вывода результатов поиска по должности
+---
+![Окно ввода года рождения для поиска](https://github.com/MamaevEA/Lesson-Python/blob/85f7134e970ff0f91be43f3dfe64d9a5e9017900/ERP/Search_Year.png)
+Окно ввода года рождения для поиска
+---
+![Окно вывода результатов поиска по году рождения](https://github.com/MamaevEA/Lesson-Python/blob/85f7134e970ff0f91be43f3dfe64d9a5e9017900/ERP/Rez_Year.png)
+Окно вывода результатов поиска по году рождения
+---
+![Окно ввода диапазона зарплат для поиска](https://github.com/MamaevEA/Lesson-Python/blob/85f7134e970ff0f91be43f3dfe64d9a5e9017900/ERP/Search_Salary.png)
+Окно ввода диапазона зарплат для поиска
+---
+![Окно вывода результатов поиска по зарплате](https://github.com/MamaevEA/Lesson-Python/blob/85f7134e970ff0f91be43f3dfe64d9a5e9017900/ERP/Rez_Salary.png)
+Окно вывода результатов поиска по зарплате
+---
