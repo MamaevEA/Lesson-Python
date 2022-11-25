@@ -1,0 +1,90 @@
+Добрый день!
+
+Это программа для вычисления математических операций, как с вещественными, так и комплексными числами. 
+Программа распознает знаки '+', '-', '*', '/'
+Комплексные числа дожны быть записаны в виде (5+4j) - скобки являются в данном случае признаком комплексного числа
+Так же программа позволяет просмотреть запись логов вычислений. которые были проведены.
+Описание методов в модулях
+
+1. Модуль UI
+
+Автор - Евгений Мамаев.
+
+Модуль создает пользовательский интерфейс с Меню из двух окон:
+1 окно - выбор дальнейших действий: подсчет простых числе, 
+подсчет комплексных чисел, вывод логов, выход из приложения.
+При выводе логов, вызывается соответствующий модуль.
+
+2 окно - ввод числа пользователем.
+После ввода числа пользователем, формируется лист с распарсенными данными 
+и передается в соответствующий модуль
+
+Задействована библиотека EasyGui.
+
+2. Модуль complex
+
+Overview of complex numbers calculator by Kozlov Ilia
+
+This method includes several stages described in submethods which are internally processed:
+
+Stage 1
+
+List is received as an Input. This list is then passes through few filters until its suitable for computing: all unnecessary elements are removed, clear list with only sub-lists of numbers comes to computational stage. 
+
+Stage 2
+
+Filtered Input list is processed basing on operands. There are four kinds of avaliable operations described in the relevant submethods: addition, subtraction, multiplication and division. Each submethod is based on relevant algebraic formula.
+
+Stage 3
+
+Once the computation is completed, the Result is returned as a string. 
+
+3. Модуль simple_count - операции с вещественными числами
+
+Методы:
+
+calculation (list) - метод принимает на вход список, последовательно состоящий из элементов 'число', 'знак операции'. 
+В результате возвращает в виде еденичного элемента списка результат вычисления выражения
+
+Пример:
+
+list [2,'+',2]
+print(calculation (list))
+>>> [4]
+
+4. Модуль logger - модуль сохранения логов.
+
+Методы:
+
+make_answer (s,dig, error) метод принимает на вход три параметра 
+s - тип string - исходное выражение, 
+dig тип string - результат вычисления
+erorr тип bool - имеет значение True, если вычисление невозможно (например деление на ноль)
+Возвращает переменную типа str
+
+Пример:
+
+s='2+2'
+dig='4'
+error= False
+
+print(make_answer (s,dig, error))
+
+>>> Текущая дата и время 2+2 = 4
+
+save_log(answer_in_string) - принимает на вход переменную типа строка и записывает ее  новой строкой в файл log.txt,
+находящийся в данной папке. Если такого файла нет, создает его. Так же в отдельном окне выводит информацию
+о сохраненных данных
+
+5. Модуль print_log -распечатывает лог файл по запросу из основной программы
+
+Автор - Андрей Понкратов
+
+Методы
+
+viev_log () без параметров
+
+Считывает информацию из файла log.txt, который находится в данной папке.Выводит его на экран
+ 
+
+ 

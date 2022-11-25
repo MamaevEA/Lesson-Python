@@ -1,27 +1,50 @@
 import easygui
 from easygui import *  
+import print_log
+from print_log import viev_log
+from simple_calc import calculation as calc
+from logger import *
+from coplex import *
 
 def menu(): # Создает интерфейс меню
     global type_vvod
-    type_vvod = ()
-    msg = "Что делать будем?"
-    title = "Меню"
-    choices = ["Посчитаем простое число", "Посчитаем комплексное число", \
+    type_vvod = ''
+    output=''
+    while output != "Бежим отсюда!":
+        msg = "Что делать будем?"
+        title = "Меню"
+        choices = ["Посчитаем простое числе", "Посчитаем комплексное число", \
         "Посмотрим логи", "Бежим отсюда!"]
-    output = buttonbox(msg, title, choices)
-    if output == "Посчитаем простое число":
-        type_vvod = "Простое число"
-        vvod()
-    elif output == "Посчитаем комплексное число":
-        type_vvod = "Комплексное число"
-        vvod()
-    elif output == "Посмотрим логи":
-        with open("log.txt", 'r',encoding='utf-8') as file:
-            contents = file.read()
-        easygui.msgbox (msg = contents, title = "Логи")
-        menu()
-    elif output == "Бежим отсюда!":
-        exit()
+        output = buttonbox(msg, title, choices)
+
+        if output == "Посчитаем простое числе":
+            type_vvod = "Простое число"
+            vvod()
+            transform_vvod()
+            clean_vvod()
+            goin_vvod()
+            fin_var()
+            count = str(calc(var_fin))
+            tmp = ''
+            tmp = var1 + ' равно ' + count
+            easygui.msgbox(tmp)
+            save_log(make_answer(var1, count, False))
+        elif output == "Посчитаем комплексное число":
+            type_vvod = "Комплексное число"
+            vvod()
+            transform_vvod()
+            clean_vvod()
+            goin_vvod()
+            fin_var()
+            count = str(Complex_calculator(var_fin))
+            tmp = ''
+            tmp = var1 + ' равно ' + count
+            easygui.msgbox(tmp)
+            save_log(make_answer(var1, count, False))
+        elif output == "Посмотрим логи":
+            viev_log()
+        elif output == "Бежим отсюда!":
+            exit()
     
 def vvod(): # Создает интерфейс окна ввода уравнения
     global var1                 # Переменная куда будем записывать данные.
@@ -105,18 +128,28 @@ def fin_var(): # Преобразование строк цифр в числа
             h = int(var_4[n])
             var_fin.append(h)
 
-def start_menu(): # Запуск программы
-    menu()
-    transform_vvod()
-    clean_vvod() 
-    goin_vvod()
-    fin_var()
+# def start_menu(): # Запуск программы
+#     menu()
+#     transform_vvod()
+#     clean_vvod()
+#     goin_vvod()
+#     fin_var()
 
-start_menu()
-print(type_vvod)
-print(var1)
-# print(var_l)
-# print(var_2)
-# print(var_4)
-print(var_fin)
+menu()
+# print(type_vvod)
+# print(var1)
+# # print(var_l)
+# # print(var_2)
+# # print(var_4)
+# print(var_fin)
+
+# print(type_vvod)
+# if type_vvod=="Простое число":
+#     count = str(calc(var_fin))
+# else:
+#     count=str(Complex_calculator(var_fin))
+# tmp=''
+# tmp=var1 +' равно '+ count
+# easygui.msgbox (tmp)
+# save_log(make_answer(var1,count,False))
 
