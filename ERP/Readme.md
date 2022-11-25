@@ -42,3 +42,5 @@
 ![Окно выбора редактируемого параметра](https://github.com/MamaevEA/Lesson-Python/blob/main/ERP/Edit_Change.png)
 Окно выбора редактируемого параметра
 ---
+![Окно ввода нового имени](https://github.com/MamaevEA/Lesson-Python/blob/b979c8df7bdfc3fd5548c666d7b9737c932fb4c5/ERP/Edit_Name.png)
+Окно ввода нового имени
