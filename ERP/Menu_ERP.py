@@ -2,7 +2,9 @@ import easygui
 from easygui import *  
 import json
 import random
-
+from Search_ERP import search_menu
+from tabulate import tabulate
+from tkinter import *
 
 def menu(): # Создает интерфейс меню
     global type_vvod        # Переменная, куда записывается выбор пользователя
@@ -27,7 +29,7 @@ def menu(): # Создает интерфейс меню
             edit()
             edit_people()
         elif output == "Вывести отчет":
-            report()
+            search_menu()
         elif output == "Выйти!":
             exit()
     
