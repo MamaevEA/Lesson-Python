@@ -9,8 +9,8 @@
     ],
     "Phone": "9625256281",
     "Salary": "100000",
-    "Job_title": "Начальник отдела",
-    "Subdivision": "Отдел продаж"
+    "Job_title": null,
+    "Subdivision": null
   },
   "4028198578": {
     "Name": "Петров Петр Петрович",
