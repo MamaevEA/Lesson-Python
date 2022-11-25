@@ -8,7 +8,7 @@ from tkinter import *
 from tkinter import scrolledtext
 import json
 
-with open('ERP/data.json') as input_data:
+with open('ERP/data.json', 'r', encoding='utf-8') as input_data:
     data = {}
     data = json.load(input_data)
 
@@ -146,7 +146,8 @@ def search_menu():
     choise1 = '' # Action received from User
     while choise1 != 'Выйти':
         choises1 = ['Вывод на экран всех сотрудников', 'Телефонный справочник', 'Параметры поиска', 'Выйти']
-        choise1 = (buttonbox('', 'Выберите действие', choises1)) # Command received from User
+        msg = 'Выберите Ваш запрос'
+        choise1 = (buttonbox(msg, 'Выбор действия', choises1)) # Command received from User
         if choise1 == 'Вывод на экран всех сотрудников':
             all_list = print_names(list1, data)
             def show_widget(list):
@@ -174,8 +175,9 @@ def search_menu():
         elif choise1 == 'Параметры поиска':
             choise2 = '' # Type of research
             while choise2 != 'Выйти':
+                msg2 = 'Выберите тип поиска'
                 choises2 = ['Поиск по должности', 'Поиск по году рождения', 'Поиск по диапазону ЗП', 'Выйти']
-                choise2 = (buttonbox('', 'Выберите тип поиска', choises2))
+                choise2 = (buttonbox(msg2, 'Выбор типа поиска', choises2))
                 if choise2 == 'Поиск по должности':
                     def input_position():
                         global var_pos
@@ -310,3 +312,5 @@ def search_menu():
                                 break
         elif choise1 == 'Выйти':
             exit()
+
+#search_menu()

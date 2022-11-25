@@ -128,7 +128,7 @@ def new_people():
         unique_sequence = uniqueid()
         ID = next(unique_sequence)
         dob = [int(var1[1]), int(var1[2]), int(var1[3])]
-        with open('ERP/data.json') as json_file:
+        with open('ERP/data.json', encoding='utf-8') as json_file:
             data = {}
             data = json.load(json_file)
         data[ID] = {
@@ -141,19 +141,19 @@ def new_people():
             'Subdivision': subdivision
         }
 
-        with open('ERP/data.json', 'w') as outfile:
+        with open('ERP/data.json', 'w', encoding='utf-8') as outfile:
             json.dump(data, outfile, indent=2, ensure_ascii=False)
 
 def del_people():
-    with open('ERP/data.json') as json_file:
+    with open('ERP/data.json', encoding='utf-8') as json_file:
         data = {}
         data = json.load(json_file)
         data.pop(dell_human, None)
-    with open('ERP/data.json', 'w') as json_file:
+    with open('ERP/data.json', 'w', encoding='utf-8') as json_file:
         json.dump(data, json_file, indent=2, ensure_ascii=False)
 
 def edit_people():
-    with open('ERP/data.json') as json_file:
+    with open('ERP/data.json', encoding='utf-8') as json_file:
         data = {}
         data = json.load(json_file)
         msg = data[edit_human]   # Сообщение
@@ -226,7 +226,7 @@ def edit_people():
             fieldValues = choicebox(msg,title, fieldNames)
             edit_but_f = fieldValues
             data[edit_human]["Subdivision"] = edit_but_f 
-    with open('ERP/data.json', 'w') as json_file:
+    with open('ERP/data.json', 'w', encoding='utf-8') as json_file:
         json.dump(data, json_file, indent=2, ensure_ascii=False)
 
     
